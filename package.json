@@ -9,16 +9,28 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.5",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "@react-three/rapier": "^1.5.0",
+    "framer-motion": "^11.18.2",
+    "gsap": "^3.13.0",
+    "meshline": "^3.3.1",
+    "next": "14.2.28",
+    "ogl": "^1.0.11",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.28"
+    "react-github-calendar": "^4.5.7",
+    "react-icons": "^5.5.0",
+    "react-tooltip": "^5.29.1",
+    "three": "^0.167.1"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
