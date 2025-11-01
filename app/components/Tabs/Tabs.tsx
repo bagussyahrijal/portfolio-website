@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { VscGithub, VscLinkExternal, VscDeviceMobile, VscGlobe, VscCode, VscBriefcase, VscRocket, VscMortarBoard } from "react-icons/vsc";
 
-const tabs = ["Projects", "Certificates", "Tech Stack"];
+const tabs = ["Projects", "Certificates"];
 
 // Define your projects here
 const projects = [
@@ -37,42 +37,6 @@ const projects = [
   },
   {
     id: 4,
-    title: "Admin Dashboard B-Laundry",
-    description: "Admin dashboard for managing data and transactions of the B-Laundry mobile application, integrated with Firebase as the backend database.",
-    image: "/assets/images/blaundry.png",
-    technologies: ["Laravel", "Blade", "Firebase"],
-    type: "website",
-    category: "freelance",
-  },
-  {
-    id: 5,
-    title: "E-Commerce Clothing Store",
-    description: "A simple e-commerce website for a clothing store.",
-    image: "/assets/images/clothshop.png",
-    technologies: ["Laravel", "React.js", "TypeScript", "Tailwind"],
-    type: "website",
-    category: "freelance",
-  },
-  {
-    id: 6,
-    title: "E-commerce Coffee Shop",
-    description: "A simple e-commerce website for a coffee shop.",
-    image: "/assets/images/cafe.png",
-    technologies: ["Laravel", "React.js", "TypeScript", "Tailwind"],
-    type: "website",
-    category: "freelance",
-  },
-    {
-    id: 7,
-    title: "Recipe App",
-    description: "A simple recipe app.",
-    image: "/assets/images/recipe.png",
-    technologies: ["Laravel", "React.js", "TypeScript", "Tailwind"],
-    type: "website",
-    category: "freelance",
-  },
-    {
-    id: 8,
     title: "Travel Website",
     description: "A travel website built with Laravel and React.",
     image: "/assets/images/travel.png",
@@ -81,7 +45,7 @@ const projects = [
     category: "project-based-learning",
   },
   {
-    id: 8,
+    id: 5,
     title: "Birthday Project (Netflix Clone)",
     description: "A birthday gift project: a Netflix clone website.",
     image: "/assets/images/buatmamah.png",
@@ -89,9 +53,9 @@ const projects = [
     type: "website",
     category: "project-based-learning",
   },
-  
+
   {
-    id: 9,
+    id: 6,
     title: "Ujastore",
     description: "Top-up store mobile app.",
     image: "/assets/images/ujastore.png",
