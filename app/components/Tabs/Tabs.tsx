@@ -6,7 +6,6 @@ import { VscGithub, VscLinkExternal, VscDeviceMobile, VscGlobe, VscCode, VscBrie
 
 const tabs = ["Projects", "Certificates"];
 
-// Define your projects here
 const projects = [
   {
     id: 1,
@@ -16,6 +15,7 @@ const projects = [
     technologies: ["Laravel", "React.js", "TypeScript", "Tailwind"],
     type: "website",
     category: "intern",
+    liveUrl: "https://ppppmi.id",
   },
   {
     id: 2,
@@ -25,6 +25,7 @@ const projects = [
     technologies: ["Laravel", "React.js", "TypeScript", "Tailwind"],
     type: "website",
     category: "intern",
+    liveUrl: "https://taxlearning.id",
   },
   {
     id: 3,
@@ -34,9 +35,20 @@ const projects = [
     technologies: ["Laravel", "React.js", "TypeScript", "Tailwind"],
     type: "website",
     category: "freelance",
+    liveUrl: "https://jaringwan.com",
   },
   {
     id: 4,
+    title: "Birthday Project (Netflix Clone)",
+    description: "A birthday gift project: a Netflix clone website.",
+    image: "/assets/images/buatmamah.png",
+    technologies: ["HTML", "CSS", "JS"],
+    type: "website",
+    category: "project-based-learning",
+    liveUrl: "https://bagussyahrijal.github.io/buatmamah",
+  },
+  {
+    id: 5,
     title: "Travel Website",
     description: "A travel website built with Laravel and React.",
     image: "/assets/images/travel.png",
@@ -44,16 +56,6 @@ const projects = [
     type: "website",
     category: "project-based-learning",
   },
-  {
-    id: 5,
-    title: "Birthday Project (Netflix Clone)",
-    description: "A birthday gift project: a Netflix clone website.",
-    image: "/assets/images/buatmamah.png",
-    technologies: ["HTML", "CSS", "JS"],
-    type: "website",
-    category: "project-based-learning",
-  },
-
   {
     id: 6,
     title: "Ujastore",
@@ -222,7 +224,7 @@ export default function Tabs() {
               {displayedProjects.map((project, i) => (
                 <motion.div
                   key={project.id}
-                  className="group relative bg-gradient-to-br from-[#10132F] to-[#1A1D40] rounded-xl overflow-hidden drop-shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:drop-shadow-[0_0_50px_rgba(255,255,255,0.5)] transition-all duration-300"
+                  className="group relative bg-gradient-to-br from-[#10132F] to-[#1A1D40] rounded-xl overflow-hidden drop-shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:drop-shadow-[0_0_50px_rgba(255,255,255,0.5)] transition-all duration-300 flex flex-col"
                   whileHover={{ scale: 1.05, y: -5 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -237,12 +239,10 @@ export default function Tabs() {
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#10132F] to-transparent opacity-60" />
-
-
                   </div>
 
                   {/* Project Info */}
-                  <div className="p-6">
+                  <div className="flex flex-col p-6 flex-grow">
                     <h3 className="text-xl font-bold text-white mb-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
                       {project.title}
                     </h3>
@@ -260,8 +260,7 @@ export default function Tabs() {
                       ))}
                     </div>
 
-
-                    <div className="w-auto flex items-center gap-2 mt-2">
+                    <div className="w-auto flex items-center gap-2 mb-4">
                       {/* Type Badge */}
                       <div className={`flex items-center gap-1 px-2 py-1 rounded-full bg-gradient-to-r ${getProjectTypeBadgeColor(project.type)} backdrop-blur-sm`}>
                         {getProjectTypeIcon(project.type)}
@@ -277,6 +276,19 @@ export default function Tabs() {
                         </span>
                       </div>
                     </div>
+
+                    {/* Live Preview Button - Only show if liveUrl exists */}
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-auto flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-gradient-to-r from-[#40ffaa] to-[#4079ff] text-white font-semibold text-sm hover:scale-105 transition-transform duration-200"
+                      >
+                        <VscLinkExternal size={16} />
+                        View Website
+                      </a>
+                    )}
                   </div>
                 </motion.div>
               ))}
