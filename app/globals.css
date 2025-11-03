@@ -7,17 +7,19 @@
   src: url('../public/assets/fonts/Satoshi-Variable.ttf') format('truetype');
   font-style: normal;
 }
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Hapus atau comment out media query ini */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
@@ -30,7 +32,6 @@ body {
     text-wrap: balance;
   }
 }
-
 
 ::-webkit-scrollbar {
   width: 2px;
