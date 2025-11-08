@@ -178,15 +178,15 @@ export default function Tabs() {
   const displayedProjects = showAllProjects ? projects : projects.slice(0, initialCount);
 
   return (
-    <div className="w-full max-w-6xl mx-auto mt-10">
+    <div className="w-full max-w-6xl mx-auto mt-6 md:mt-10 px-4">
       {/* Tab Button Group with Animated Indicator */}
-      <div className="relative flex justify-center gap-4 bg-gradient-to-r from-[#0a0c1f] via-[#10132F] to-[#0a0c1f] rounded-xl p-2 drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+      <div className="relative flex justify-center gap-2 md:gap-4 bg-gradient-to-r from-[#0a0c1f] via-[#10132F] to-[#0a0c1f] rounded-xl p-1.5 md:p-2 drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]">
         {tabs.map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
             className={`
-              relative flex-1 py-3 rounded-lg text-sm font-semibold font-satoshi transition-all duration-300 z-10
+              relative flex-1 py-2 md:py-3 rounded-lg text-xs md:text-sm font-semibold font-satoshi transition-all duration-300 z-10
               ${activeTab === tab
                 ? "text-white"
                 : "text-gray-400 hover:text-white hover:scale-105"
@@ -207,7 +207,7 @@ export default function Tabs() {
 
       {/* Tab Contents with Animations */}
       <motion.div
-        className="mt-8"
+        className="mt-6 md:mt-8"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -216,7 +216,7 @@ export default function Tabs() {
         {activeTab === "Projects" && (
           <>
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -231,7 +231,7 @@ export default function Tabs() {
                   transition={{ delay: i * 0.1 }}
                 >
                   {/* Project Image */}
-                  <div className="relative w-full h-48 bg-gradient-to-br from-[#40ffaa]/20 to-[#4079ff]/20 overflow-hidden">
+                  <div className="relative w-full h-40 md:h-48 bg-gradient-to-br from-[#40ffaa]/20 to-[#4079ff]/20 overflow-hidden">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -242,36 +242,36 @@ export default function Tabs() {
                   </div>
 
                   {/* Project Info */}
-                  <div className="flex flex-col p-6 flex-grow">
-                    <h3 className="text-xl font-bold text-white mb-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+                  <div className="flex flex-col p-4 md:p-6 flex-grow">
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
                       {project.title}
                     </h3>
-                    <p className="text-gray-400 text-sm mb-4">{project.description}</p>
+                    <p className="text-gray-400 text-xs md:text-sm mb-3 md:mb-4 line-clamp-2">{project.description}</p>
 
                     {/* Technologies */}
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
                       {project.technologies.map((tech, index) => (
                         <span
                           key={index}
-                          className="text-xs px-2 py-1 bg-gradient-to-r from-[#40ffaa]/20 to-[#4079ff]/20 text-white rounded-full"
+                          className="text-[10px] md:text-xs px-1.5 md:px-2 py-0.5 md:py-1 bg-gradient-to-r from-[#40ffaa]/20 to-[#4079ff]/20 text-white rounded-full"
                         >
                           {tech}
                         </span>
                       ))}
                     </div>
 
-                    <div className="w-auto flex items-center gap-2 mb-4">
+                    <div className="w-auto flex items-center gap-1.5 md:gap-2 mb-3 md:mb-4 flex-wrap">
                       {/* Type Badge */}
-                      <div className={`flex items-center gap-1 px-2 py-1 rounded-full bg-gradient-to-r ${getProjectTypeBadgeColor(project.type)} backdrop-blur-sm`}>
+                      <div className={`flex items-center gap-1 px-1.5 md:px-2 py-0.5 md:py-1 rounded-full bg-gradient-to-r ${getProjectTypeBadgeColor(project.type)} backdrop-blur-sm`}>
                         {getProjectTypeIcon(project.type)}
-                        <span className="text-xs font-semibold capitalize">
+                        <span className="text-[10px] md:text-xs font-semibold capitalize">
                           {project.type}
                         </span>
                       </div>
                       {/* Category Badge */}
-                      <div className={`flex items-center gap-1 px-2 py-1 rounded-full bg-gradient-to-r ${getProjectCategoryBadgeColor(project.category)} backdrop-blur-sm`}>
+                      <div className={`flex items-center gap-1 px-1.5 md:px-2 py-0.5 md:py-1 rounded-full bg-gradient-to-r ${getProjectCategoryBadgeColor(project.category)} backdrop-blur-sm`}>
                         {getProjectCategoryIcon(project.category)}
-                        <span className="text-xs font-semibold capitalize">
+                        <span className="text-[10px] md:text-xs font-semibold capitalize">
                           {project.category.replace(/-/g, " ")}
                         </span>
                       </div>
@@ -283,9 +283,9 @@ export default function Tabs() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-auto flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-gradient-to-r from-[#40ffaa] to-[#4079ff] text-white font-semibold text-sm hover:scale-105 transition-transform duration-200"
+                        className="mt-auto flex items-center justify-center gap-1.5 md:gap-2 w-full py-1.5 md:py-2 rounded-lg bg-gradient-to-r from-[#40ffaa] to-[#4079ff] text-white font-semibold text-xs md:text-sm hover:scale-105 transition-transform duration-200"
                       >
-                        <VscLinkExternal size={16} />
+                        <VscLinkExternal size={14} className="md:w-4 md:h-4" />
                         View Website
                       </a>
                     )}
@@ -295,10 +295,10 @@ export default function Tabs() {
             </motion.div>
             {/* Tombol Lihat Lebih Banyak */}
             {!showAllProjects && projects.length > initialCount && (
-              <div className="flex justify-center mt-8">
+              <div className="flex justify-center mt-6 md:mt-8">
                 <button
                   onClick={() => setShowAllProjects(true)}
-                  className="px-6 py-2 rounded-xl bg-gradient-to-r from-[#40ffaa] to-[#4079ff] text-white font-semibold hover:scale-105 transition-transform duration-200"
+                  className="px-4 md:px-6 py-1.5 md:py-2 rounded-xl bg-gradient-to-r from-[#40ffaa] to-[#4079ff] text-white text-sm md:text-base font-semibold hover:scale-105 transition-transform duration-200"
                 >
                   See More
                 </button>
@@ -309,7 +309,7 @@ export default function Tabs() {
               <div className="flex justify-center mt-4">
                 <button
                   onClick={() => setShowAllProjects(false)}
-                  className="px-6 py-2 rounded-xl bg-gradient-to-r from-[#4079ff] to-[#40ffaa] text-white font-semibold hover:scale-105 transition-transform duration-200"
+                  className="px-4 md:px-6 py-1.5 md:py-2 rounded-xl bg-gradient-to-r from-[#4079ff] to-[#40ffaa] text-white text-sm md:text-base font-semibold hover:scale-105 transition-transform duration-200"
                 >
                   See Less
                 </button>
@@ -321,7 +321,7 @@ export default function Tabs() {
         {/* Certificates Content */}
         {activeTab === "Certificates" && (
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -345,9 +345,9 @@ export default function Tabs() {
                   height={300}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                  <h4 className="text-white font-semibold text-sm">{cert.title}</h4>
-                  <p className="text-gray-300 text-xs">{cert.issuer} • {cert.date}</p>
+                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 bg-gradient-to-t from-black/80 to-transparent">
+                  <h4 className="text-white font-semibold text-xs md:text-sm">{cert.title}</h4>
+                  <p className="text-gray-300 text-[10px] md:text-xs">{cert.issuer} • {cert.date}</p>
                 </div>
               </motion.a>
             ))}
