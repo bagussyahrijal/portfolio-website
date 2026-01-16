@@ -307,9 +307,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="w-full overflow-x-auto">
+            <div className="w-full overflow-x-auto hidden sm:block">
             <GitHubCalendarComponent />
-          </div>
+            </div>
         </section>
       </AnimatedContent>
       {/* Section 2 End */}
