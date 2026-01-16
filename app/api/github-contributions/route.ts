@@ -1,4 +1,5 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, type NextRequest } from 'next/server';
+export const dynamic = 'force-dynamic';
 
 function startOfWeek(d: Date) {
   const copy = new Date(d);
@@ -8,8 +9,8 @@ function startOfWeek(d: Date) {
   return copy;
 }
 
-export async function GET(req: Request) {
-  const { searchParams } = new URL(req.url);
+export async function GET(req: NextRequest) {
+  const searchParams = req.nextUrl.searchParams;
   const username = searchParams.get('username');
   if (!username) return NextResponse.json({ error: 'Missing username' }, { status: 400 });
 
