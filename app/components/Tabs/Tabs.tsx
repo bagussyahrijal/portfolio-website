@@ -8,7 +8,6 @@ const tabs = ["Projects", "Certificates"];
 
 const projects = [
   {
-    id: 1,
     title: "P4MI",
     description: "Company profile P4MI and information of CFTR student certification.",
     image: "/assets/images/p4mi.png",
@@ -18,7 +17,6 @@ const projects = [
     liveUrl: "https://ppppmi.id",
   },
   {
-    id: 2,
     title: "Tax Learning",
     description: "A tax learning platform for students.",
     image: "/assets/images/tls.png",
@@ -28,7 +26,15 @@ const projects = [
     liveUrl: "https://taxlearning.id",
   },
   {
-    id: 3,
+    title: "Talenta",
+    description: "An educational platform for skill development.",
+    image: "/assets/images/talenta.png",
+    technologies: ["Laravel", "React.js", "TypeScript", "Tailwind"],
+    type: "website",
+    category: "intern",
+    liveUrl: "https://talentaedu.id",
+  },
+  {
     title: "Jaring Wan",
     description: "Profile and marketing website for Jaring Wan.",
     image: "/assets/images/jaringwan.png",
@@ -38,7 +44,6 @@ const projects = [
     liveUrl: "https://jaringwan.com",
   },
   {
-    id: 4,
     title: "Verif.AI Analytics Website",
     description: "Analytics website for Verif.AI Mobile App",
     image: "/assets/images/verifai-analytics.png",
@@ -48,7 +53,6 @@ const projects = [
     liveUrl: "https://verif-ai-analytics-web.onrender.com/",
   },
   {
-    id: 5,
     title: "Birthday Project (Netflix Clone)",
     description: "A birthday gift project: a Netflix clone website.",
     image: "/assets/images/buatmamah.png",
@@ -58,7 +62,6 @@ const projects = [
     liveUrl: "https://bagussyahrijal.github.io/buatmamah",
   },
   {
-    id: 6,
     title: "Verif.AI Mobile App",
     description: "Profile and marketing website for Jaring Wan.",
     image: "/assets/images/verifai.png",
@@ -67,7 +70,6 @@ const projects = [
     category: "project-based-learning",
   },
   {
-    id: 7,
     title: "Travel Website",
     description: "A travel website built with Laravel and React.",
     image: "/assets/images/travel.png",
@@ -76,7 +78,6 @@ const projects = [
     category: "project-based-learning",
   },
   {
-    id: 8,
     title: "Ujastore",
     description: "Top-up store mobile app.",
     image: "/assets/images/ujastore.png",
@@ -242,7 +243,6 @@ export default function Tabs() {
             >
               {displayedProjects.map((project, i) => (
                 <motion.div
-                  key={project.id}
                   className="group relative bg-gradient-to-br from-[#10132F] to-[#1A1D40] rounded-xl overflow-hidden drop-shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:drop-shadow-[0_0_50px_rgba(255,255,255,0.5)] transition-all duration-300 flex flex-col"
                   whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.02 } }}
                   initial={{ opacity: 0, y: 20 }}
